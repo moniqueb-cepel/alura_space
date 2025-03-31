@@ -6,5 +6,7 @@ urlpatterns = [
     # path('', index),
     path('', index, name='index'),
     # path('imagem', imagem),
-    path('imagem/', imagem, name='imagem'),
+    # path('imagem/', imagem, name='imagem'),
+    # Para inserir o id da imagem
+    path('imagem/<int:foto_id>', imagem, name='imagem'),
 ]
