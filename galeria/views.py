@@ -18,7 +18,17 @@ def index(request):
     }
     return render(request, 'galeria/index.html', {"cards": dados}) """
 
-    fotografias = Fotografia.objects.all()
+    # para trazer todos os itens
+    # fotografias = Fotografia.objects.all()
+
+    # para trazer só os itens publicados/filtro 
+    # fotografias = Fotografia.objects.filter(publicada=True)
+
+    # para ordenar pelo campo data + o campo filtrado (as imagens no site)
+    # na ordenação, se quiser decrescente é só colocar o sinal de - na frente do campo
+    # fotografias = Fotografia.objects.order_by("-data_fotografia").filter(publicada=True)
+    fotografias = Fotografia.objects.order_by("data_fotografia").filter(publicada=True)
+
     return render(request, 'galeria/index.html', {"cards": fotografias})
 
 """ def imagem(request):
