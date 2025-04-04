@@ -1,5 +1,7 @@
 from django.contrib import admin
 from django.urls import path, include
+from django.conf import settings
+from django.conf.urls.static import static
 
 # importar a função index, para ser chamada qnd a pag for carregada
 # from galeria.views import index
@@ -11,4 +13,4 @@ urlpatterns = [
     # path('', index),
     # fazendo de forma para abrangir mais aplicações dentro de galeria
     path('', include('galeria.urls')),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
