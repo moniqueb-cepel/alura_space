@@ -13,4 +13,5 @@ urlpatterns = [
     # path('', index),
     # fazendo de forma para abrangir mais aplicações dentro de galeria
     path('', include('galeria.urls')),
+    path('', include('usuarios.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
